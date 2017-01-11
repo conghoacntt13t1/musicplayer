@@ -11,18 +11,19 @@ import android.widget.TextView;
 import com.example.hoa.musicplayer.Class.Song;
 import com.example.hoa.musicplayer.R;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by hoa on 11/01/2017.
  */
 
 public class MusicAdapter extends BaseAdapter {
-    private ArrayList<Song> listSong;
+    private List<Song> listSong;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public MusicAdapter(ArrayList<Song> listSong, Context context) {
+    public MusicAdapter(List<Song> listSong, Context context) {
         this.listSong = listSong;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
@@ -54,6 +55,7 @@ public class MusicAdapter extends BaseAdapter {
             viewHolder=new ViewHolder();
             viewHolder.tvTitle=(TextView)convertView.findViewById(R.id.tv_title);
             viewHolder.tvArtist=(TextView) convertView.findViewById(R.id.tv_artist);
+            viewHolder.imageView=(ImageView) convertView.findViewById(R.id.icon_music);
             convertView.setTag(viewHolder);
         }
         else {
